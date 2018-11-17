@@ -43,5 +43,21 @@
     </snapshotRepository>
   </distributionManagement>
 </profile>
+    
+    <profile>
+     <id>spring-deploy</id>
+ <distributionManagement>
+    <repository>
+      <id>spring-releases</id>
+      <name>spring-releases</name>
+      <url>http://ip-172-31-10-204.ec2.internal:8081/nexus/content/repositories/spring-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>spring-snapshots</id>
+      <name>spring-snapshots</name>
+      <url>http://ip-172-31-10-204.ec2.internal:8081/nexus/content/repositories/spring-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+</profile>
   </profiles>
 </project>
