@@ -29,10 +29,10 @@
   
   <profiles>
 <profile>
-     <id>spring-deploy</id>
+     <id>myapp-deploy</id>
  <distributionManagement>
     <repository>
-      <id>spring-releases</id>
+      <id>myapp-releases</id>
       <name>spring-releases</name>
       <url>http://ip-172-31-23-20.ap-south-1.compute.internal:8081/nexus/content/repositories/spring-releases/</url>
     </repository>
