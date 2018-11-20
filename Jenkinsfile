@@ -24,7 +24,7 @@ node('maven-label') {
          artifacts: [[
                      artifactId: 'simple-maven-project-with-tests',
                      classifier: '',
-                     file: 'ubuntu@ip-172-31-37-155:~/jenkinsslave/workspace/nexus/target/my-app-1.0.jar',
+                     file: '/home/ubuntu/jenkinsslave/workspace/nexus/target/my-app-1.0-SNAPSHOT.jar',
                      type: 'jar'
                    ]],
                    credentialsId: 'myappuser',
