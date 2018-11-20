@@ -19,21 +19,22 @@ node('maven-label') {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
    }
-   nexusArtifactUploader {
-        nexusVersion('nexus2')
-        protocol('http')
-        nexusUrl('ec2-54-89-82-138.compute-1.amazonaws.com:8081/nexus')
-        groupId('com.mycompany.app')
-        version('2.14.10-01')
-        repository('myapp-releases')
-        credentialsId('myappuser')
-        artifact {
-            artifactId('my-app')
-            type('jar')
-            //classifier('debug')
-            file('my-app-1.0.jar')
-        }
-        
+   stage('Uploader'){
+           nexusArtifactUploader {
+           nexusVersion('nexus2')
+           protocol('http')
+           nexusUrl('ec2-54-89-82-138.compute-1.amazonaws.com:8081/nexus')
+           groupId('com.mycompany.app')
+           version('2.14.10-01')
+           repository('myapp-releases')
+           credentialsId('myappuser')
+           artifact {
+               artifactId('my-app')
+               type('jar')
+               //classifier('debug')
+               file('my-app-1.0.jar')
+           }
+      } 
       }
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
