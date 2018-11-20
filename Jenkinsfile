@@ -20,7 +20,7 @@ node('maven-label') {
       }
    }
    stage('Uploader'){
-      
+      nexusArtifactUploader{
          artifacts: [[
                      artifactId: 'simple-maven-project-with-tests',
                      classifier: '',
@@ -33,10 +33,8 @@ node('maven-label') {
                    nexusVersion: 'nexus2',
                    protocol: 'http',
                    repository: 'myapp-snapshots',
-                   version: '1.0-SNAPSHOT'
-          
-           }
-      } 
+                   version: '1.0-SNAPSHOT'          
+           } 
       }
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
