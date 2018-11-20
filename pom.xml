@@ -10,7 +10,7 @@
     <repository>
       <id>my-repo2</id>
       <name>public</name>
-      <url>http://ip-172-31-10-204.ec2.internal:8081/nexus/content/groups/public/</url>
+      <url>http://ip-172-31-37-155.ec2.internal:8081/nexus/content/groups/public/</url>
     </repository>
     <repository>
       <id>my-repo1</id>
@@ -34,30 +34,16 @@
     <repository>
       <id>myapp-releases</id>
       <name>myapp-releases</name>
-      <url>http://ip-172-31-10-204.ec2.internal:8081/nexus/content/repositories/myapp-releases/</url>
+      <url>http://ip-172-31-37-155.ec2.internal:8081/nexus/content/repositories/myapp-releases/</url>
     </repository>
     <snapshotRepository>
       <id>myapp-snapshots</id>
       <name>myapp-snapshots</name>
-      <url>http://ip-172-31-10-204.ec2.internal:8081/nexus/content/repositories/myapp-snapshots/</url>
+      <url>http://ip-172-31-37-155.ec2.internal:8081/nexus/content/repositories/myapp-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
 </profile>
     
-    <profile>
-     <id>spring-deploy</id>
- <distributionManagement>
-    <repository>
-      <id>spring-releases</id>
-      <name>spring-releases</name>
-      <url>http://ip-172-31-10-204.ec2.internal:8081/nexus/content/repositories/spring-releases/</url>
-    </repository>
-    <snapshotRepository>
-      <id>spring-snapshots</id>
-      <name>spring-snapshots</name>
-      <url>http://ip-172-31-10-204.ec2.internal:8081/nexus/content/repositories/spring-snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
-</profile>
+    
   </profiles>
 </project>
