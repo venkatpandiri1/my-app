@@ -4,7 +4,8 @@
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  
+  <!-- <version>1.0-SNAPSHOT</version>  this causeses the only snapshot if we take this out then release is default
   <name>my-app</name>
 <repositories>
     <repository>
