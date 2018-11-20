@@ -20,19 +20,21 @@ node('maven-label') {
       }
    }
    stage('Uploader'){
-           nexusArtifactUploader {
-           nexusVersion('nexus2')
-           protocol('http')
-           nexusUrl('ec2-54-89-82-138.compute-1.amazonaws.com:8081/nexus')
-           groupId('com.mycompany.app')
-           version('2.14.10-01')
-           repository('myapp-snapshots')
-           credentialsId('myappuser')
-           artifact {
-               artifactId('my-app')
-               type('jar')
-               classifier('debug')
-               file('my-app-1.0.jar')
+      
+         artifacts: [[
+                     artifactId: 'simple-maven-project-with-tests',
+                     classifier: '',
+                     file: 'ubuntu@ip-172-31-37-155:~/jenkinsslave/workspace/nexus/target/my-app-1.0.jar',
+                     type: 'jar'
+                   ]],
+                   credentialsId: 'myappuser',
+                   groupId: 'test',
+                   nexusUrl: 'ec2-54-89-82-138.compute-1.amazonaws.com:8081/nexus',
+                   nexusVersion: 'nexus2',
+                   protocol: 'http',
+                   repository: 'myapp-snapshots',
+                   version: '1.0-SNAPSHOT'
+          
            }
       } 
       }
