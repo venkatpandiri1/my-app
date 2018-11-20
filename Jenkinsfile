@@ -31,7 +31,7 @@ node('maven-label') {
            artifact {
                artifactId('my-app')
                type('jar')
-               //classifier('debug')
+               classifier('debug')
                file('my-app-1.0.jar')
            }
       } 
