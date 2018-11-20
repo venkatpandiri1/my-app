@@ -14,7 +14,7 @@ node('maven-label') {
       // Run the maven build
       if (isUnix()) {
         // sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-          sh "'${mvnHome}/bin/mvn' -Pmyapp-deploy -Dmaven.test.failure.ignore clean deploy"
+          sh "'${mvnHome}/bin/mvn' -Pmyapp-deploy -Dmaven.test.failure.ignore clean install"
       } else {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
@@ -26,7 +26,7 @@ node('maven-label') {
            nexusUrl('ec2-54-89-82-138.compute-1.amazonaws.com:8081/nexus')
            groupId('com.mycompany.app')
            version('2.14.10-01')
-           repository('myapp-releases')
+           repository('myapp-snapshots')
            credentialsId('myappuser')
            artifact {
                artifactId('my-app')
