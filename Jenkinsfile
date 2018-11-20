@@ -14,7 +14,7 @@ node('maven-label') {
       // Run the maven build
       if (isUnix()) {
         // sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean deploy"
+          sh "'${mvnHome}/bin/mvn' -Pmyapp-deploy -Dmaven.test.failure.ignore clean deploy"
       } else {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
