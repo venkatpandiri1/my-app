@@ -34,7 +34,7 @@ node('slave1') {
                    protocol: 'http',
                    repository: 'myapp-snapshots',
                    version: '1.0-SNAPSHOT'
-                  ) 
+       ) 
       }
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
