@@ -27,9 +27,9 @@ node('maven-label') {
                      file: '/home/ubuntu/jenkinsslave/workspace/nexus/target/my-app-1.0-SNAPSHOT.jar',
                      type: 'jar'
                    ]],
-                   credentialsId: 'myappuser',
+                   credentialsId: 'nexusartifact',
                    groupId: 'test',
-                   nexusUrl: 'ec2-54-89-82-138.compute-1.amazonaws.com:8081/nexus',
+                   nexusUrl: 'ec2-34-207-232-28.compute-1.amazonaws.com:8081/nexus',
                    nexusVersion: 'nexus2',
                    protocol: 'http',
                    repository: 'myapp-snapshots',
