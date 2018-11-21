@@ -25,16 +25,14 @@ node('slave1') {
                      artifactId: 'simple-maven-project-with-tests',
                      classifier: ''      
                      file: 'simple-maven-project-with-tests-1.0-SNAPSHOT.jar',
-                     type: 'jar'
-                   ]],
+                     type: 'jar'   ]],
                    credentialsId: 'myappuser',
                    groupId: 'test',
                    nexusUrl: 'http://ec2-34-207-232-28.compute-1.amazonaws.com:8081/nexus',
                    nexusVersion: 'nexus2',
                    protocol: 'http',
                    repository: 'myapp-snapshots',
-                   version: '1.0-SNAPSHOT'
-       ) 
+                   version: '1.0-SNAPSHOT'   ) 
       }
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
