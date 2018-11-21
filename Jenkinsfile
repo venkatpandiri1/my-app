@@ -20,21 +20,21 @@ node('slave1') {
       }
    }
    stage('Uploader'){
-      nexusArtifactUploader(
-         artifacts: [[
+     nexusArtifactUploader(
+                   artifacts: [[
                      artifactId: 'simple-maven-project-with-tests',
                      classifier: '',
-                     file: '/home/ubuntu/jenkinsslave/workspace/nexus/target/my-app-1.0-SNAPSHOT.jar',
+                     file: '/home/ubuntu/jenkins/workspace/test_pipeline/target/simple-maven-project-with-tests-1.0-SNAPSHOT.jar',
                      type: 'jar'
                    ]],
-                   credentialsId: 'nexusartifact',
+                   credentialsId: 'myappuser',
                    groupId: 'test',
                    nexusUrl: 'http://ec2-34-207-232-28.compute-1.amazonaws.com:8081/nexus',
                    nexusVersion: 'nexus2',
                    protocol: 'http',
                    repository: 'myapp-snapshots',
-                   version: '1.0-SNAPSHOT'          
-           ) 
+                   version: '1.0-SNAPSHOT'
+      ) 
       }
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
