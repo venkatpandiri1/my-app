@@ -29,7 +29,7 @@ node('slave1') {
                    ]],
                    credentialsId: 'nexusartifact',
                    groupId: 'test',
-                   nexusUrl: 'ec2-34-207-232-28.compute-1.amazonaws.com:8081/nexus',
+                   nexusUrl: 'http://ec2-34-207-232-28.compute-1.amazonaws.com:8081/nexus',
                    nexusVersion: 'nexus2',
                    protocol: 'http',
                    repository: 'myapp-snapshots',
