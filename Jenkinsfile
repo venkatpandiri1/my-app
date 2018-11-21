@@ -23,8 +23,8 @@ node('slave1') {
      nexusArtifactUploader(
                    artifacts: [[
                      artifactId: 'simple-maven-project-with-tests',
-                     classifier: '',
-                     file: '/home/ubuntu/jenkinsslave/workspace/sonarqubepipeline2/target/simple-maven-project-with-tests-1.0-SNAPSHOT.jar',
+                     classifier: ''      
+                     file: 'simple-maven-project-with-tests-1.0-SNAPSHOT.jar',
                      type: 'jar'
                    ]],
                    credentialsId: 'myappuser',
@@ -34,7 +34,7 @@ node('slave1') {
                    protocol: 'http',
                    repository: 'myapp-snapshots',
                    version: '1.0-SNAPSHOT'
-      ) 
+                  ) 
       }
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
