@@ -24,7 +24,7 @@ node('slave1') {
                    artifacts: [[
                      artifactId: 'simple-maven-project-with-tests',
                      classifier: '',
-                     file: '/home/ubuntu/jenkins/workspace/sonarqubepipeline2/target/simple-maven-project-with-tests-1.0-SNAPSHOT.jar',
+                      file: "${workspace}/*.jar",
                      type: 'jar'
                    ]],
                    credentialsId: 'myappuser',
