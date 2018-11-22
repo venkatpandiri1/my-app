@@ -20,11 +20,13 @@ node('slave1') {
       }
    }
    stage('Upload'){
+      dir("${workspace}")
+      {
       nexusArtifactUploader(
                    artifacts: [[
                      artifactId: 'simple-maven-project-with-tests',
                      classifier: '',
-                      file: "target/*.jar",
+                      file: "target/simple-maven-project-with-tests-1.0-SNAPSHOT.jar",
                      type: 'jar'
                    ]],
                    credentialsId: 'myappuser',
@@ -35,7 +37,7 @@ node('slave1') {
                    repository: 'myapp-snapshots',
                    version: '1.0-SNAPSHOT'
 ) 
-      
+      }
       
       }
    stage('Results') {
