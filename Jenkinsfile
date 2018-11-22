@@ -22,6 +22,12 @@ node('slave1') {
    stage('Upload'){
       dir("${workspace}")
       {
+       sh '''#!/bin/bash
+file="target/simple-maven-project-with-tests-1.0-SNAPSHOT.jar"
+if [ ! -f "$file" ]
+then
+    echo "$0: File '${file}' not found."
+fi'''
       nexusArtifactUploader(
                    artifacts: [[
                      artifactId: 'simple-maven-project-with-tests',
