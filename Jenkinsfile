@@ -24,7 +24,7 @@ node('slave1') {
                    artifacts: [[
                      artifactId: 'simple-maven-project-with-tests',
                      classifier: '',
-                      file: "${workspace}/*.jar",
+                      file: "target/*.jar",
                      type: 'jar'
                    ]],
                    credentialsId: 'myappuser',
