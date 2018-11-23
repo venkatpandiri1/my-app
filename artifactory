@@ -34,7 +34,8 @@ node('slave1') {
           }
        ]
       }"""
-      server.upload(uploadSpec)
+      def uploadbuild = server.upload(uploadSpec)
+      println "${uploadbuild}"
        } 
       
       }
