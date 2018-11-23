@@ -13,7 +13,8 @@ node('slave1') {
    stage('Build') {
       // Run the maven build
       if (isUnix()) {
-        sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package sonar:sonar -Dsonar.host.url=http://http://ec2-54-161-114-188.compute-1.amazonaws.com:9000"
+        sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package" 
+         //sonar:sonar -Dsonar.host.url=http://http://ec2-54-161-114-188.compute-1.amazonaws.com:9000"
           //sh "'${mvnHome}/bin/mvn' -Pmyapp-deploy -Dmaven.test.failure.ignore clean install sonar:sonar"
       } else {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
