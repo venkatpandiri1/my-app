@@ -48,7 +48,7 @@ node('slave1') {
        "files": [
         {
             "pattern": "generic-local/*.jar",
-            "target": "/opt/"
+            "target": "/tmp/"
           }
        ]
       }"""
