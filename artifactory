@@ -20,6 +20,9 @@ node('slave1') {
       }
    }
    stage('Upload'){
+   
+      dir("${workspace}")
+      {
            
        def server = Artifactory.server 'artifactoryServer'
        
@@ -27,12 +30,12 @@ node('slave1') {
         "files": [
           {
             "pattern": "${workspace}/artifactory/target/*.jar",
-            "target": "generic-local/jars/"
+            "target": "generic-local/"
           }
        ]
       }"""
       server.upload(uploadSpec)
-        
+       } 
       
       }
    stage('Results') {
