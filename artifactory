@@ -39,6 +39,22 @@ node('slave1') {
        } 
       
       }
+      stage('Download')
+      {
+      node('master')
+      {
+       def server = Artifactory.server 'artifactoryServer'
+      def downloadSpec = """{
+       "files": [
+        {
+            "pattern": "generic-local/*.jar",
+            "target": "/opt/"
+          }
+       ]
+      }"""
+      server.download(downloadSpec)
+      }
+      }
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
