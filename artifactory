@@ -1,3 +1,6 @@
+
+properties([parameters(string(defaultValue: '', description: 'version', name: 'VERSION', trim: false)])])
+
 node('slave1') {
    def mvnHome
    stage('Preparation') { // for display purposes
@@ -30,7 +33,7 @@ node('slave1') {
         "files": [
           {
             "pattern": "${workspace}/target/*.jar",
-            "target": "generic-local/1.0/"
+            "target": "generic-loca/${params.VERSION}/"
           }
        ]
       }"""
@@ -47,7 +50,7 @@ node('slave1') {
       def downloadSpec = """{
        "files": [
         {
-            "pattern": "generic-local/1.0/*.jar",
+            "pattern": "generic-local/${params.VERSION}/*.jar",
             "target": "/tmp/"
           }
        ]
