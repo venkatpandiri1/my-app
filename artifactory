@@ -30,7 +30,7 @@ node('slave1') {
         "files": [
           {
             "pattern": "${workspace}/target/*.jar",
-            "target": "generic-local/",
+            "target": "generic-local/"
           }
        ]
       }"""
