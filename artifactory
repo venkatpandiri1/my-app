@@ -29,12 +29,12 @@ node('slave1') {
        def uploadSpec = """{
         "files": [
           {
-            "pattern": "${workspace}/artifactory/target/*.jar",
-            "target": "generic-local/"
+            "pattern": "${workspace}/artifactory/target/simple-*.jar",
+            "target": "generic-local/",
           }
        ]
       }"""
-      def uploadbuild = server.upload(uploadSpec)
+      def uploadbuild = server.upload spec:uploadSpec
       println "${uploadbuild}"
        } 
       
