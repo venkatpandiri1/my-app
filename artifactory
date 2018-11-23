@@ -1,5 +1,5 @@
 
-properties([parameters(string(defaultValue: '', description: 'version', name: 'VERSION', trim: false)])])
+properties([parameters(string(defaultValue: '', description: 'version', name: 'VERSION', trim: false)])
 
 node('slave1') {
    def mvnHome
