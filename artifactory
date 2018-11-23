@@ -20,24 +20,8 @@ node('slave1') {
       }
    }
    stage('Upload'){
-      dir("${workspace}")
-      {
-      nexusArtifactUploader(
-                   artifacts: [[
-                     artifactId: 'simple-maven-project-with-tests',
-                     classifier: '',
-                      file: "target/simple-maven-project-with-tests-1.0-SNAPSHOT.jar",
-                     type: 'jar'
-                   ]],
-                   credentialsId: 'myappuser',
-                   groupId: 'test',
-                   nexusUrl: 'ec2-34-207-232-28.compute-1.amazonaws.com:8081/nexus',
-                   nexusVersion: 'nexus2',
-                   protocol: 'http',
-                   repository: 'myapp-snapshots',
-                   version: '1.0-SNAPSHOT'
-) 
-      }
+           
+       sh "uname -a"
       
       }
    stage('Results') {
