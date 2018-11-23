@@ -30,7 +30,7 @@ node('slave1') {
         "files": [
           {
             "pattern": "${workspace}/target/*.jar",
-            "target": "generic-local/"
+            "target": "generic-local/1.0/"
           }
        ]
       }"""
@@ -47,7 +47,7 @@ node('slave1') {
       def downloadSpec = """{
        "files": [
         {
-            "pattern": "generic-local/*.jar",
+            "pattern": "generic-local/1.0/*.jar",
             "target": "/tmp/"
           }
        ]
