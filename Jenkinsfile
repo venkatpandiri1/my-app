@@ -3,8 +3,8 @@ node('slave1') {
    def mvnHome
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
-      git branch: '${branch}', url: 'https://github.com/jglick/simple-maven-project-with-tests.git'
-      //git branch: '${branch}', url: 'https://github.com/venkatpandiri1/my-app.git' 
+      //git branch: '${branch}', url: 'https://github.com/jglick/simple-maven-project-with-tests.git'
+      git branch: '${branch}', url: 'https://github.com/venkatpandiri1/my-app.git' 
      // git 'https://github.com/venkatpandiri1/my-app.git'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
@@ -28,7 +28,7 @@ node('slave1') {
                    artifacts: [[
                      artifactId: 'simple-maven-project-with-tests',
                      classifier: '',
-                      file: "target/simple-maven-project-with-tests-1.0-SNAPSHOT.jar",
+                      file: "target/my-app-1.0-SNAPSHOT.jar",
                      type: 'jar'
                    ]],
                    credentialsId: 'myappuser',
