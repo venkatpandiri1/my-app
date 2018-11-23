@@ -21,7 +21,18 @@ node('slave1') {
    }
    stage('Upload'){
            
-       sh "uname -a"
+       def server = Artifactory.server 'artifactoryServer'
+       
+       def uploadSpec = """{
+        "files": [
+          {
+            "pattern": "${workspace}/artifactory/target/*.jar",
+            "target": "generic-local/"
+          }
+       ]
+      }"""
+      server.upload(uploadSpec)
+        
       
       }
    stage('Results') {
