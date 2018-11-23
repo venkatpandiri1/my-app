@@ -24,7 +24,8 @@ node('slave1') {
    stage('Upload'){
    
       dir("${workspace}")
-      {
+     {
+     println "${params.VERSION}"
            
        def server = Artifactory.server 'artifactoryServer'
        
@@ -32,7 +33,7 @@ node('slave1') {
         "files": [
           {
             "pattern": "${workspace}/target/*.jar",
-            "target": "generic-loca/${params.VERSION}/"
+            "target": "generic-local/${params.VERSION}/"
           }
        ]
       }"""
