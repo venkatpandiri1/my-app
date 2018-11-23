@@ -32,7 +32,7 @@ node('slave1') {
                    ]],
                    credentialsId: 'myappuser',
                    groupId: 'test',
-                   nexusUrl: 'ip-172-31-37-155.ec2.internal:8081/nexus',
+                   nexusUrl: 'ip-172-31-37-155.ec2.internal:8082/nexus',
                    nexusVersion: 'nexus2',
                    protocol: 'http',
                    repository: 'myapp-snapshots',
