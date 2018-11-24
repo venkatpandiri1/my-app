@@ -1,8 +1,9 @@
 node('slave1') {
    def mvnHome
-   def branch='master'
+   def branch
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
+      branch = "master"
       git branch: '${branch}', url: 'https://github.com/jglick/simple-maven-project-with-tests.git'
       //git branch: '${branch}', url: 'https://github.com/venkatpandiri1/my-app.git' 
       println test
