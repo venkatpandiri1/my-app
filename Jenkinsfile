@@ -4,7 +4,7 @@ node('slave1') {
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
       branch = "master"
-      git branch: '${branch}', url: 'https://github.com/jglick/simple-maven-project-with-tests.git'
+      git 'https://github.com/jglick/simple-maven-project-with-tests.git'
       //git branch: '${branch}', url: 'https://github.com/venkatpandiri1/my-app.git' 
       println test
      // git 'https://github.com/venkatpandiri1/my-app.git'
