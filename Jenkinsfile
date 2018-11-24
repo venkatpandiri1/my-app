@@ -6,7 +6,7 @@ node('slave1') {
       branch = "master"
       git 'https://github.com/jglick/simple-maven-project-with-tests.git'
       //git branch: '${branch}', url: 'https://github.com/venkatpandiri1/my-app.git' 
-      println test
+      println "test"
      // git 'https://github.com/venkatpandiri1/my-app.git'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
