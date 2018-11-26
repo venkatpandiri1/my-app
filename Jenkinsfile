@@ -51,6 +51,7 @@ node('slave1') {
    
    stage("deployWithAnsible")
    {
-      
+      git: "https://github.com/venkatpandiri1/ansibleExample.git"
+      sh "ansible-playbook -i hosts site.yml"
    }
 }
