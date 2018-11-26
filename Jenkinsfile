@@ -48,4 +48,9 @@ node('slave1') {
       junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
    }
+   
+   stage("deployWithAnsible")
+   {
+      
+   }
 }
